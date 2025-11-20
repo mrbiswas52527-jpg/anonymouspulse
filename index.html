@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Anonymous Pulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="navbar">
+            <nav>
+                <a href="#" class="nav-item active" id="feed-tab">
+                    <span class="icon">🏠</span>
+                    <span class="label">Feed</span>
+                </a>
+                <a href="#" class="nav-item" id="post-tab">
+                    <span class="icon">➕</span>
+                    <span class="label">Post</span>
+                </a>
+                <button class="settings-btn">⚙️</button>
+            </nav>
+        </header>
+
+        <section class="post-section" id="post-view">
+            <h1>The Anonymous Pulse</h1>
+            <p class="tagline">Speak your mind. Share your truth. No profiles, no names, just the moment.</p>
+
+            <div class="form-container">
+                <h2>What's on your mind?</h2>
+                <textarea
+                    id="thought-input"
+                    maxlength="500"
+                    placeholder="Type your anonymous thought here (max 500 characters)..."
+                ></textarea>
+                <input
+                    type="text"
+                    id="image-url-input"
+                    placeholder="Optional: Paste an image URL here (e.g., from Imgur, or a placeholder site)"
+                >
+                <div class="footer-bar">
+                    <span id="char-count">500 remaining</span>
+                    <button id="post-button">Post Anonymously</button>
+                </div>
+                <p class="error-message" style="display: none;">Error: Firebase configuration missing.</p>
+            </div>
+        </section>
+        <section class="feed-section" id="feed-view" style="display: none;">
+            <div id="posts-list">
+                <div class="post-card" data-post-id="example-1">
+                    <p>This is an example anonymous post in the feed.</p>
+                    <div class="post-actions">
+                        <button class="like-btn">❤️ <span class="like-count">0</span></button>
+                        <small>Posted just now</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feed-section" id="feed-view" style="display: none;">
+            <div class="feed-header">
+                <span class="feed-title">Pulse</span><span class="feed-link">Feed</span>
+            </div>
+            <div id="posts-list">
+                <div class="post-card">
+                    <p>This is an example anonymous post in the feed.</p>
+                    <small>Posted just now</small>
+                </div>
+            </div>
+        </section>
+
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
