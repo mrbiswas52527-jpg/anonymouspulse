@@ -21,7 +21,7 @@
                 <button class="settings-btn">⚙️</button>
             </nav>
         </header>
-
+        
         <section class="post-section" id="post-view">
             <h1>The Anonymous Pulse</h1>
             <p class="tagline">Speak your mind. Share your truth. No profiles, no names, just the moment.</p>
@@ -56,20 +56,33 @@
                 </div>
             </div>
         </section>
-
-        <section class="feed-section" id="feed-view" style="display: none;">
-            <div class="feed-header">
-                <span class="feed-title">Pulse</span><span class="feed-link">Feed</span>
-            </div>
-            <div id="posts-list">
-                <div class="post-card">
-                    <p>This is an example anonymous post in the feed.</p>
-                    <small>Posted just now</small>
-                </div>
-            </div>
-        </section>
-
         
+    <!-- Firebase init (module) -->
+    <script type="module">
+      // Use Firebase CDN modules for browser. Adjust versions if needed.
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBILSIN-Ed3PTQ_-YVFb2f01miiokwO4HA",
+        authDomain: "aonymouspulse.firebaseapp.com",
+        projectId: "aonymouspulse",
+        storageBucket: "aonymouspulse.firebasestorage.app",
+        messagingSenderId: "423477022200",
+        appId: "1:423477022200:web:a7d796ddf93dd4a9b51a0d",
+        measurementId: "G-LDCDNEGBYR"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      // Analytics may not be available in some environments (e.g., local file://), so guard it.
+      try {
+        const analytics = getAnalytics(app);
+      } catch (e) {
+        // Non-fatal: analytics isn't critical for the app to run.
+        // Keep a console message so developers know why it may be missing.
+        console.warn('Firebase analytics not initialized:', e);
+      }
+    </script>
 
     <script src="script.js"></script>
 </body>
